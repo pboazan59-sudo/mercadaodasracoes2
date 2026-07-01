@@ -409,16 +409,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Promotional Veterinarian Banner */}
-              <div className="mt-8 max-w-md mx-auto lg:mx-0 rounded-[24px] overflow-hidden shadow-md border border-brand-primary-light transform transition-transform hover:scale-[1.02] duration-300">
-                <img 
-                  src="/src/assets/images/vet_promo_banner_1782683425417.jpg"
-                  alt="Veterinária Mercadão das Rações"
-                  className="w-full h-auto object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
             </div>
 
             {/* Visual Column */}
@@ -428,8 +418,8 @@ export default function App() {
                 {/* Main Image Frame with cute border */}
                 <div className="relative w-full max-w-[420px] aspect-square rounded-[36px] overflow-hidden shadow-xl border-4 border-white bg-white">
                   <img 
-                    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=800"
-                    alt="Cachorrinhos felizes se divertindo"
+                    src="https://i.im.ge/QMATNwx/imagem-1.jpg"
+                    alt="Mercadão das Rações"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
