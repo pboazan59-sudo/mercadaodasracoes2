@@ -170,17 +170,7 @@ export default function ProductCatalog() {
 
   // WhatsApp purchase message redirect
   const handleBuyWhatsapp = (product: Product) => {
-    const phone = "5511999999999";
-    const message = `Olá, tudo bem? Gostaria de saber sobre a disponibilidade do seguinte produto para venda no Mercadão das Rações:
-🛍️ *${product.name}*
-🏷️ Categoria: ${CATEGORY_MAP[product.category]}
-💵 Valor: R$ ${product.price.toFixed(2).replace(".", ",")}
-📦 ID do produto: ${product.id}
-
-Está disponível para retirada ou entrega? Obrigado(a)!`;
-
-    const encodedText = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodedText}`;
+    const whatsappUrl = "https://w.app/mercadaodasracoes";
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 

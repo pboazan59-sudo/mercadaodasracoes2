@@ -23,7 +23,8 @@ import {
   Smile, 
   Award,
   ThumbsUp,
-  ExternalLink
+  ExternalLink,
+  MessageCircle
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import ProductCatalog from "./components/ProductCatalog";
@@ -42,7 +43,7 @@ interface Testimonial {
   id: string;
   name: string;
   petName: string;
-  petType: "Cachorro" | "Gato";
+  petType: string;
   rating: number;
   text: string;
   avatar: string;
@@ -177,30 +178,39 @@ export default function App() {
   const testimonials: Testimonial[] = [
     {
       id: "t1",
-      name: "Mariana Silva",
-      petName: "Pipoca",
-      petType: "Cachorro",
+      name: "Walkiria Vitorina",
+      petName: "Pets",
+      petType: "Cachorros",
       rating: 5,
-      text: "Meu cachorro voltou cheiroso, calmo e muito bem cuidado. Geralmente ele morre de medo de banho, mas aqui ele se sente em casa! Atendimento excelente!",
+      text: "Excelente,aDra Carmen , muito dedicada ,atenciosa . Meus pets adoram ir pra banho e tosa,eles são muito bem cuidados . Recomendo e excelente, carinho e cuidado não falta .",
       avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
     },
     {
       id: "t2",
-      name: "Rodrigo Costa",
-      petName: "Mingau",
-      petType: "Gato",
+      name: "Marcia Freitas De Souza",
+      petName: "Mel",
+      petType: "Cachorro",
       rating: 5,
-      text: "Gostei muito da veterinária, explicou tudo com paciência, calma e muito carinho. O Mingau costuma ficar estressado, mas ela tem um jeito maravilhoso com gatos.",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
+      text: "São muito solícitos tanto ao telefone como pessoalmente, gostei muito do atendimento. Voltarei sempre que precisar. 😍",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
     },
     {
       id: "t3",
-      name: "Ana Julia Ferreira",
-      petName: "Luna",
+      name: "Simone Raquel Lira",
+      petName: "Lily",
       petType: "Cachorro",
       rating: 5,
-      text: "O melhor banho e tosa da região! A tosa na tesoura que fazem na Luna fica impecável, super simétrica e ela cheira maravilhosamente por dias. Recomendo demais!",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
+      text: "Desde que conheci a Dr. Carmen e sua equipe não larguei mais... São carinhos e muito cuidadosos. Não tratam o bichinho como um número. Nunca me deixaram na mão e sempre tem muita zelo pela minha peludinha Lily 💖",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150"
+    },
+    {
+      id: "t4",
+      name: "Ale Ferreira",
+      petName: "Floquinho",
+      petType: "Cachorro",
+      rating: 5,
+      text: "Adoramos esse pet shop! A veterinária Carmem então, nem se fala! Um doce. Meu cachorro fica bem a vontade quando vai tomar banho!",
+      avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150"
     }
   ];
 
@@ -247,13 +257,13 @@ export default function App() {
             {/* CTA Header Button */}
             <div className="hidden lg:block">
               <a 
-                href="https://wa.me/5511999999999?text=Olá! Gostaria de falar com o Mercadão das Rações." 
+                href="https://w.app/mercadaodasracoes" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md transition-all transform hover:-translate-y-0.5"
                 id="cta-whatsapp-header"
               >
-                <Phone className="w-4 h-4 fill-white" />
+                <MessageCircle className="w-4 h-4 fill-white" />
                 <span>Falar no WhatsApp</span>
               </a>
             </div>
@@ -328,12 +338,12 @@ export default function App() {
                 
                 <div className="pt-4 px-3">
                   <a 
-                    href="https://wa.me/5511999999999?text=Olá! Gostaria de falar com o Mercadão das Rações."
+                    href="https://w.app/mercadaodasracoes"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#20ba59] text-white py-3 px-4 rounded-full font-bold shadow-md transition-colors text-center"
                   >
-                    <Phone className="w-5 h-5 fill-white" />
+                    <MessageCircle className="w-5 h-5 fill-white" />
                     <span>Agendar pelo WhatsApp</span>
                   </a>
                 </div>
@@ -373,13 +383,13 @@ export default function App() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <a 
-                  href="https://wa.me/5511999999999?text=Olá! Gostaria de falar com o Mercadão das Rações." 
+                  href="https://w.app/mercadaodasracoes" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-brand-accent hover:bg-brand-accent-dark text-white px-8 py-4 rounded-full font-bold shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-brand-accent/20"
+                  className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-8 py-4 rounded-full font-bold shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-[#25D366]/20"
                   id="hero-btn-primary"
                 >
-                  <Phone className="w-5 h-5 fill-white" />
+                  <MessageCircle className="w-5 h-5 fill-white" />
                   <span>Falar no WhatsApp</span>
                 </a>
                 
@@ -489,7 +499,7 @@ export default function App() {
                 return (
                   <a 
                     key={service.id}
-                    href={`https://wa.me/5511999999999?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o produto/serviço: *${service.title}*`)}`}
+                    href="https://w.app/mercadaodasracoes"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group bg-white rounded-[32px] p-6 shadow-sm border border-brand-primary-light hover:border-brand-primary hover:bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between text-left"
@@ -535,7 +545,7 @@ export default function App() {
                 return (
                   <a 
                     key={service.id}
-                    href={`https://wa.me/5511999999999?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o atendimento de saúde: *${service.title}*`)}`}
+                    href="https://w.app/mercadaodasracoes"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group bg-white rounded-[32px] p-6 shadow-sm border border-[#E8F5E9] hover:border-[#388E3C] hover:bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between text-left"
@@ -653,12 +663,12 @@ export default function App() {
 
                  <div className="pt-4 flex flex-wrap gap-4">
                   <a 
-                    href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma consulta veterinária no Mercadão das Rações." 
+                    href="https://w.app/mercadaodasracoes" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 bg-brand-primary hover:bg-brand-primary-dark text-white px-6 py-3 rounded-full font-bold shadow-md transition-colors"
+                    className="inline-flex items-center space-x-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-full font-bold shadow-md transition-colors"
                   >
-                    <Phone className="w-4 h-4 fill-white" />
+                    <MessageCircle className="w-4 h-4 fill-white" />
                     <span>Marcar Consulta Vet</span>
                   </a>
                   <a 
@@ -714,7 +724,7 @@ export default function App() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
             {testimonials.map((test) => (
               <div 
                 key={test.id}
@@ -773,7 +783,7 @@ export default function App() {
               </div>
             </div>
             <a 
-              href="https://wa.me/5522999999999?text=Olá! Gostaria de tirar uma dúvida e agendar atendimento."
+              href="https://w.app/mercadaodasracoes"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-brand-primary hover:bg-brand-primary-dark text-white rounded-xl text-xs font-bold shadow-sm transition-colors shrink-0"
@@ -845,13 +855,13 @@ export default function App() {
                 </a>
 
                 <a 
-                  href="https://wa.me/5511999999999?text=Olá, gostaria de tirar uma dúvida sobre a localização do Mercadão das Rações." 
+                  href="https://w.app/mercadaodasracoes" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3.5 rounded-full text-xs font-bold shadow-md transition-colors"
                   id="btn-whatsapp-localizacao"
                 >
-                  <Phone className="w-4 h-4 fill-white" />
+                  <MessageCircle className="w-4 h-4 fill-white" />
                   <span>Chamar no WhatsApp</span>
                 </a>
               </div>
@@ -940,13 +950,13 @@ export default function App() {
                   <Instagram className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://wa.me/5511999999999" 
+                  href="https://w.app/mercadaodasracoes" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-white/5 text-stone-300 hover:text-brand-accent hover:bg-white/10 transition-colors flex items-center justify-center"
                   aria-label="WhatsApp"
                 >
-                  <Phone className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4 fill-current" />
                 </a>
               </div>
             </div>
