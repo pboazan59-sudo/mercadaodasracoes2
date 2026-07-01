@@ -1,0 +1,6 @@
+{
+  "name": "Mercadão das Rações",
+  "description": "Website moderno e completo para o Mercadão das Rações, com ofertas de rações, produtos pet, banho e tosa, atendimento veterinário e pedidos integrados via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
